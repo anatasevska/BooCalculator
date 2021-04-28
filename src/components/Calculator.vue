@@ -1,25 +1,25 @@
 <template>
   <div class="calculator">
    <div class="display btn">{{current || 0}}</div>
-  <div @click="clear" class="btn">C</div>
-  <div @click="sign" class="btn ">+/-</div>
-  <div @click="percent" class="btn ">%</div>
-  <div @click='divide'  class="btn operator">÷</div>
-  <div @click="append(7)" class="btn">7</div>
-  <div class="btn" @click="append(8)">8</div>
-  <div class="btn" @click="append(9)">9</div>
-  <div  @click='mult' class="btn operator">x</div>
-  <div class="btn" @click="append(4)">4</div>
-  <div class="btn" @click="append(5)">5</div>
-  <div class="btn" @click="append(6)">6</div>
-  <div  @click='sub' class="btn operator">-</div>
-  <div class="btn" @click="append(1)">1</div>
-  <div class="btn" @click="append(2)">2</div>
-  <div class="btn" @click="append(3)">3</div>
-  <div  @click='add' class="btn operator">+</div>
-  <div class="zero btn" @click="append(0)">0</div>
-  <div @click="dot" class= "btn">.</div>
-  <div @click="equal" class="btn operator">=</div>
+  <div @click="clear" class="btn clickable">C</div>
+  <div @click="sign" class="btn clickable">+/-</div>
+  <div @click="percent" class="btn clickable">%</div>
+  <div @click='divide'  class="btn operator clickable">÷</div>
+  <div @click="append(7)" class="btn clickable">7</div>
+  <div class="btn clickable" @click="append(8)">8</div>
+  <div class="btn clickable" @click="append(9)">9</div>
+  <div  @click='mult' class="btn operator clickable">x</div>
+  <div class="btn clickable" @click="append(4)">4</div>
+  <div class="btn clickable" @click="append(5)">5</div>
+  <div class="btn clickable" @click="append(6)">6</div>
+  <div  @click='sub' class="btn operator clickable">-</div>
+  <div class="btn clickable" @click="append(1)">1</div>
+  <div class="btn clickable" @click="append(2)">2</div>
+  <div class="btn clickable" @click="append(3)">3</div>
+  <div  @click='add' class="btn operator clickable">+</div>
+  <div class="zero btn clickable" @click="append(0)">0</div>
+  <div @click="dot" class= "btn clickable">.</div>
+  <div @click="equal" class="btn operator clickable">=</div>
   </div>
 </template>
 
@@ -105,21 +105,19 @@ export default {
   font-size: 2rem;
   padding-bottom: 10px;
 }
-
 .zero{
   grid-column: 1 / 3;
 }
 .btn{
   border: 0.5px ridge rgb(99, 99, 99);
   padding-top:15px;
-  cursor: pointer;
   background: #a19a9a;
   transition: ease-in-out;
 }
-.btn:hover{
-  opacity: 90%;
+.clickable{
+  cursor: pointer;
 }
-.btn:active{
+.clickable:active{
   transform: scale(0.95);
 }
 .operator{
